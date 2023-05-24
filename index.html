@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="css/main.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <header>
+            <h1>Crud</h1>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </header>
+        <div class="inputs">
+            <input placeholder="title" type="text" id="title" class="form-control">
+            <div class="price">
+                <input onkeyup="getTotal()" type="number" id="price" min="1" class="form-control" placeholder="price">
+                <input onkeyup="getTotal()" type="number" id="taxes" min="1" class="form-control" placeholder="taxes">
+                <input onkeyup="getTotal()" type="number" id="ads" min="1" class="form-control" placeholder="ads">
+                <input onkeyup="getTotal()" type="number" id="discount" min="1" class="form-control"
+                    placeholder="discount">
+                <small onkeyup="getTotal()" id="total"></small>
+            </div>
+            <input class="form-control" placeholder="count" type="number" id="count" min="1">
+            <input class="form-control" placeholder="category" type="text" id="category">
+            <button class="btn btn-success" id="submit">Create</button>
+        </div>
+        <div class="outputs">
+            <div class="searchBlock">
+                <input class="form-control" onkeyup="searchData(this.value)" type="text" id="search"
+                    placeholder="Search">
+                <div class="btnSearch">
+                    <button class="btn btn-dark" onclick="getSearchMood(this.id)" id="searchTitle">Search By
+                        Title</button>
+                    <button class="btn btn-dark" onclick="getSearchMood(this.id)" id="searchCategory">Search By
+                        Category</button>
+                </div>
+            </div>
+            <div id="delete-all"></div>
+            <table class="table">
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">title</th>
+                    <th scope="col">price</th>
+                    <th scope="col">taxes</th>
+                    <th scope="col">ads</th>
+                    <th scope="col">discount</th>
+                    <th scope="col">total</th>
+                    <th scope="col">category</th>
+                    <th scope="col">update</th>
+                    <th scope="col">delete</th>
+                </tr>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
